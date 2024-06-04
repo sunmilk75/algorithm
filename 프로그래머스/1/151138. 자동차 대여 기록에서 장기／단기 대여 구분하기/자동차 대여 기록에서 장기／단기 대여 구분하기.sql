@@ -1,0 +1,12 @@
+SELECT 
+    crcrh.HISTORY_ID,
+    crcrh.CAR_ID,
+    DATE_FORMAT(crcrh.START_DATE, '%Y-%m-%d') AS 'START_DATE',
+    DATE_FORMAT(crcrh.END_DATE, '%Y-%m-%d') AS 'END_DATE', 
+    CASE
+        WHEN DATEDIFF(crcrh.END_DATE, crcrh.START_DATE) + 1 > 29 THEN '장기 대여'
+        ELSE '단기 대여'
+    END AS RENT_TYPE
+FROM CAR_RENTAL_COMPANY_RENTAL_HISTORY crcrh
+WHERE crcrh.START_DATE BETWEEN '2022-09-01' AND '2022-09-30'
+ORDER BY crcrh.HISTORY_ID DESC;
