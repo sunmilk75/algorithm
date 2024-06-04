@@ -1,0 +1,1 @@
+SELECT crcc.* FROM CAR_RENTAL_COMPANY_CAR crcc WHERE crcc.options LIKE '%네비게이션%' ORDER BY crcc.car_id DESC;
