@@ -1,4 +1,3 @@
--- 코드를 입력하세요
 SELECT
     os.USER_ID,
     os.PRODUCT_ID
