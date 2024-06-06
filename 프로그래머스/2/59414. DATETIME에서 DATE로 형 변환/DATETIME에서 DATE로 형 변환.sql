@@ -1,0 +1,6 @@
+SELECT 
+    ANIMAL_ID,
+    NAME,
+    DATE_Format(DATETIME, '%Y-%m-%d')
+FROM ANIMAL_INS 
+ORDER BY ANIMAL_ID ASC;
