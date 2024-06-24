@@ -6,6 +6,11 @@ FROM FISH_INFO
 GROUP BY 
     FISH_TYPE
 HAVING
-    AVG (IFNULL(LENGTH, 10)) > 32
+    AVG (
+        IFNULL(LENGTH, 10)) >= 33
 ORDER BY FISH_TYPE ASC
 ;
+
+# AVG 함수는 기본적으로 NULL값을 제외 시키고 실행된다고 함..
+# 그래서 LENGTH IS NULL THEN 10이 아니라
+# IFNULL(LENGTH, 10)을 사용했음
