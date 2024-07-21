@@ -1,22 +1,35 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.*;
+import java.util.StringTokenizer;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scn = new Scanner(System.in);
-        int n = scn.nextInt();
-        int result = 0;
-        ArrayList<Integer> list = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            int v = scn.nextInt();
-            list.add(v);
+
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int N = Integer.parseInt(br.readLine());
+        int count = 0;
+        int[] arr = new int[N];
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        ;
+
+        for (int i = 0; i < N; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-        int r = scn.nextInt();
-        for(int i : list){
-            if(r == i){
-                result = result + 1;
+
+        int b = Integer.parseInt(br.readLine());
+
+        for (int j = 0; j < arr.length; j++) {
+            if (b == arr[j]) {
+                count++;
             }
         }
-        System.out.println(result);
+        System.out.println(count);
+
+        br.close();
+        bw.flush();
+        bw.close();
     }
 }
