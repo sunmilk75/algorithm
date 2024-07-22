@@ -1,17 +1,20 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Scanner scn = new Scanner(System.in);
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        br.readLine();
+
         int sum = 0;
-        int n = scn.nextInt();
-        String str = scn.next();
-        for (int i = 0; i < n; i++) {
-            char ch = str.charAt(i);
-            int x = (int)ch - (int)'0';
-            sum += x;
+
+        for(byte value : br.readLine().getBytes()) {
+            sum += (value - '0');
         }
-        System.out.println(sum);
+
+        System.out.print(sum);
+
     }
 }
